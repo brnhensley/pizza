@@ -10,13 +10,13 @@ function Pizza(size, toppings, price) {
 // Creates topping array
 Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputTopping3) {
   if (inputTopping1 !== "") {
-    this.toppings.push(inputTopping1);
+    this.toppings.push(inputTopping1 + ", ");
   }
   if (inputTopping2 !== "") {
-    this.toppings.push(inputTopping2);
+    this.toppings.push(inputTopping2 + ", ");
   }
   if (inputTopping3 !== "") {
-    this.toppings.push(inputTopping3);
+    this.toppings.push(inputTopping3 + ", ");
   }
 }
 
@@ -44,17 +44,19 @@ Pizza.prototype.findPrice = function () {
 
 function showOrder(size, toppings, price) {
   // var order = myPizza // unneccessary
-  console.log(size, toppings, price);
+  console.log(toppings);
   $("form#new-order").hide();
   $("span#before-order").hide();
   $(".order-summery").show();
   $("#show-size").append(size);
   $("#show-price").append(price);
-  // if (toppings.length !== 0) {
-  //   $(".show-toppings").show();
-  //   $(".show-toppings").append(toppings);
-  // }
-  //
+  if (toppings.length > 0) {
+    console.log(typeof toppings);
+    toppings.toString()
+    console.log(typeof toppings);
+    $("#show-toppings").show();
+    $("#show-toppings").append(toppings);
+  }
 }
 
 // User Interface Logic -------------------------------

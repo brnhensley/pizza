@@ -44,7 +44,7 @@ Pizza.prototype.findPrice = function () {
 
 function showOrder(size, toppings, price) {
   // var order = myPizza // unneccessary
-  console.log(toppings);
+  console.log(toppings.join(""));
   var toppingsString = toppings;
   $("form#new-order").hide();
   $("span#before-order").hide();
@@ -53,7 +53,7 @@ function showOrder(size, toppings, price) {
   $("#show-price").append(price);
   if (toppings.length > 0) {
     $("#show-toppings").show();
-    $("#show-toppings").append(String(toppings));
+    $("#show-toppings").append(String(toppings.join("")));
   }
 }
 

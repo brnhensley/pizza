@@ -47,11 +47,12 @@ $(document).ready(function() {
     inputSize = sizeCalculator(inputSize)
     console.log(inputSize);
     var myPizza = new Pizza(inputSize)
-    $("#toppings-form").show();
-    $("form#new-order").hide();
+    // $("#toppings-form").show();
+    // $("form#new-order").hide();
   });
 })
 
+$()
 // var inputToppings = $("").val();
 
 // This function listens for clicks on toppings

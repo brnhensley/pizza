@@ -45,17 +45,15 @@ Pizza.prototype.findPrice = function () {
 function showOrder(size, toppings, price) {
   // var order = myPizza // unneccessary
   console.log(toppings);
+  var toppingsString = toppings;
   $("form#new-order").hide();
   $("span#before-order").hide();
   $(".order-summery").show();
   $("#show-size").append(size);
   $("#show-price").append(price);
   if (toppings.length > 0) {
-    console.log(typeof toppings);
-    toppings.toString()
-    console.log(typeof toppings);
     $("#show-toppings").show();
-    $("#show-toppings").append(toppings);
+    $("#show-toppings").append(String(toppings));
   }
 }
 
@@ -74,7 +72,6 @@ $(document).ready(function() {
     myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
     myPizza.findPrice();
     showOrder(myPizza.size, myPizza.toppings, myPizza.price);
-    console.log(myPizza);
     return myPizza;
   });
 })

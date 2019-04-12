@@ -10,13 +10,13 @@ function Pizza(size, toppings, price) {
 // Creates topping array
 Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputTopping3) {
   if (inputTopping1 !== "") {
-    this.toppings.push(inputTopping1 + ", ");
+    this.toppings.push(inputTopping1);
   }
   if (inputTopping2 !== "") {
-    this.toppings.push(inputTopping2 + ", ");
+    this.toppings.push(inputTopping2);
   }
   if (inputTopping3 !== "") {
-    this.toppings.push(inputTopping3 + ", ");
+    this.toppings.push(inputTopping3);
   }
 }
 
@@ -52,8 +52,16 @@ function showOrder(size, toppings, price) {
   $("#show-size").append(size);
   $("#show-price").append(price);
   if (toppings.length > 0) {
+    $("#no-toppings").hide();
     $("#show-toppings").show();
-    $("#show-toppings").append(String(toppings.join("").slice(0, -2)));
+    // $("#show-toppings").append(String(toppings.join("").slice(0, -2)));
+    var orderToppingsList = $("ul#toppings-list");
+    htmlListToppings = "";
+    toppings.forEach(function(element) {
+      htmlListToppings += "<li>" + element + "</li>";
+    });
+    console.log(htmlListToppings);
+    orderToppingsList.html(htmlListToppings);
   }
 }
 

@@ -1,8 +1,34 @@
 .order-summery {
   display: none;
-  background-image:
+  /* background-image: */
 }
 
 #show-toppings {
   display: none;
+}
+
+p {
+  font-size: 20px;
+}
+
+ul {
+  font-size: 20px;
+}
+
+img {
+  width: 100%
+}
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+form {
+  font-size: 20px;
+}
+
+.box {
+  border: 5px solid black;
+  padding: 15px;
+  margin: 20px;
+  background-color: #A9D5ED
 }

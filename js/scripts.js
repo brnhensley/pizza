@@ -21,7 +21,6 @@ Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputToppi
   if (inputTopping3 !== "") {
     this.toppings.push(inputTopping3);
   }
-  console.log(this.toppings);
 }
 
 Pizza.prototype.findPrice = function () {
@@ -31,7 +30,7 @@ Pizza.prototype.findPrice = function () {
   } else if (this.size === "Medium") {
     this.price = 10;
     this.price += (this.toppings.length * 2);
-    console.log(myPizza.price);
+    console.log(this.price);
     console.log(this.toppings.length);
   } else if (this.size === "Large"){
     this.price = 14;
@@ -46,6 +45,16 @@ Pizza.prototype.findPrice = function () {
 
 
 // User Interface Logic -------------------------------
+
+var myPizza = new Pizza();
+console.log(myPizza);
+
+// Shows the final order to the user
+function showOrder() {
+  
+}
+
+
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
@@ -57,27 +66,9 @@ $(document).ready(function() {
     myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
     myPizza.findPrice();
     console.log(myPizza);
+    $("form#new-order").hide();
     return myPizza;
 
-    // $("#toppings-form").show();
-    // $("form#new-order").hide();
+    $("#toppings-form").show();
   });
 })
-
-// Delete after testing
-var myPizza = new Pizza();
-console.log(myPizza);
-//
-
-// var inputToppings = $("").val();
-
-// This function listens for clicks on toppings
-// function attachToppingListeners() {
-//   $()
-//   // On click the toppings should appear on the page in a list under order size.  On submit the price should appear
-// }
-//
-// // Shows the final order to the user
-// function showOrder() {
-//
-// }

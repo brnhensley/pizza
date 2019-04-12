@@ -1,3 +1,5 @@
+var myPizza = new Pizza();
+
 // Business Logic
 function Pizza(size, toppings, price) {
   this.size = size;
@@ -5,12 +7,9 @@ function Pizza(size, toppings, price) {
   this.price = price;
 }
 
-// Delete Later
-var myPizza = new Pizza()
-//  
 
 Pizza.prototype.sizeCalculator = function (inputSize) {
-  this.size = inputSize
+  this.size = inputSize;
 };
 
 Pizza.prototype.addToppings = function (inputTopping) {
@@ -18,7 +17,17 @@ Pizza.prototype.addToppings = function (inputTopping) {
 }
 
 Pizza.prototype.findPrice = function () {
-
+  if (this.size === "Small") {
+    this.price = 6;
+  } else if (this.size === "Medium") {
+    this.price = 10;
+  } else {
+    this.price = 14;
+  }
+  if (this.toppings.length > 0) {
+    this.price += this.toppings.length;
+  }
+  return this.price;
 };
 
 // User Logic

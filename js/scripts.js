@@ -7,10 +7,7 @@ function Pizza(size, toppings, price) {
   this.price = price;
 }
 
-Pizza.prototype.sizeCalculator = function (inputSize) {
-  this.size = inputSize;
-};
-
+// Creates topping array
 Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputTopping3) {
   if (inputTopping1 !== "") {
     this.toppings.push(inputTopping1);
@@ -23,6 +20,7 @@ Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputToppi
   }
 }
 
+// Price calculator
 Pizza.prototype.findPrice = function () {
   if (this.size === "Small") {
     this.price = 6;
@@ -42,21 +40,23 @@ Pizza.prototype.findPrice = function () {
   return this.price;
 };
 
-
+// Shows the final order to the user
+Pizza.prototype.showOrder = function() {
+  console.log(myPizza);
+  $("form#new-order").hide();
+  $("span#before-order").hide();
+  $(".order-summery").show();
+}
 
 // User Interface Logic -------------------------------
 
 var myPizza = new Pizza();
-console.log(myPizza);
 
-// Shows the final order to the user
-function showOrder() {
-  
-}
-
+// User Interface Logic -------------------------------
 
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
+    console.log("hi");
     event.preventDefault();
     var inputSize = $("select.new-pizza-size").val();
     var inputTopping1 = $("select.new-topping1").val();
@@ -65,10 +65,21 @@ $(document).ready(function() {
     var myPizza = new Pizza(inputSize, inputTopping1, inputTopping2, inputTopping3, 0)
     myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
     myPizza.findPrice();
+    myPizza.showOrder();
     console.log(myPizza);
-    $("form#new-order").hide();
     return myPizza;
-
-    $("#toppings-form").show();
   });
 })
+
+// DELETE THIS
+// $(document).ready(function() {
+  //   $("form#new-order").submit(function(event) {
+    //     event.preventDefault();
+    //     var inputSize = $("select.new-pizza-size").val();
+    //     inputSize = sizeCalculator(inputSize)
+    //     console.log(inputSize);
+    //     var myPizza = new Pizza(inputSize)
+    //     $("#toppings-form").show();
+    //     $("form#new-order").hide();
+    //   });
+    // })

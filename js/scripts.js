@@ -48,9 +48,13 @@ function showOrder(size, toppings, price) {
   $("form#new-order").hide();
   $("span#before-order").hide();
   $(".order-summery").show();
-  $("#show-size").append(size)
-  // if ()
-  $(".show-toppings").html
+  $("#show-size").append(size);
+  $("#show-price").append(price);
+  // if (toppings.length !== 0) {
+  //   $(".show-toppings").show();
+  //   $(".show-toppings").append(toppings);
+  // }
+  //
 }
 
 // User Interface Logic -------------------------------

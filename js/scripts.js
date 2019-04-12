@@ -1,6 +1,6 @@
 // Business Logic  ------------------------------------
 
-
+// Pizza constructor
 function Pizza(size, toppings, price) {
   this.size = size;
   this.toppings = [];
@@ -41,9 +41,7 @@ Pizza.prototype.findPrice = function () {
 };
 
 // Shows the final order to the user
-
 function showOrder(size, toppings, price) {
-  // var order = myPizza // unneccessary
   console.log(toppings.join(""));
   var toppingsString = toppings;
   $("form#new-order").hide();
@@ -54,7 +52,6 @@ function showOrder(size, toppings, price) {
   if (toppings.length > 0) {
     $("#no-toppings").hide();
     $("#show-toppings").show();
-    // $("#show-toppings").append(String(toppings.join("").slice(0, -2)));
     var orderToppingsList = $("ul#toppings-list");
     htmlListToppings = "";
     toppings.forEach(function(element) {

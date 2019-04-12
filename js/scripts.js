@@ -7,6 +7,7 @@ function Pizza(size, toppings, price) {
 
 // Delete Later
 var myPizza = new Pizza()
+//  
 
 Pizza.prototype.sizeCalculator = function (inputSize) {
   this.size = inputSize

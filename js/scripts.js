@@ -22,15 +22,15 @@ Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputToppi
 
 // Price calculator
 Pizza.prototype.findPrice = function () {
-  if (this.size === "Small") {
+  if (this.size === "small") {
     this.price = 6;
     this.price += this.toppings.length;
-  } else if (this.size === "Medium") {
+  } else if (this.size === "medium") {
     this.price = 10;
     this.price += (this.toppings.length * 2);
     console.log(this.price);
     console.log(this.toppings.length);
-  } else if (this.size === "Large"){
+  } else if (this.size === "large"){
     this.price = 14;
     this.price += (this.toppings.length * 3);
   } else {
@@ -41,22 +41,24 @@ Pizza.prototype.findPrice = function () {
 };
 
 // Shows the final order to the user
-Pizza.prototype.showOrder = function() {
-  console.log(myPizza);
+
+function showOrder(size, toppings, price) {
+  // var order = myPizza // unneccessary
+  console.log(size, toppings, price);
   $("form#new-order").hide();
   $("span#before-order").hide();
   $(".order-summery").show();
+  $("#show-size").append(size)
+  // if ()
+  $(".show-toppings").html
 }
 
 // User Interface Logic -------------------------------
 
 var myPizza = new Pizza();
 
-// User Interface Logic -------------------------------
-
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
-    console.log("hi");
     event.preventDefault();
     var inputSize = $("select.new-pizza-size").val();
     var inputTopping1 = $("select.new-topping1").val();
@@ -65,7 +67,7 @@ $(document).ready(function() {
     var myPizza = new Pizza(inputSize, inputTopping1, inputTopping2, inputTopping3, 0)
     myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
     myPizza.findPrice();
-    myPizza.showOrder();
+    showOrder(myPizza.size, myPizza.toppings, myPizza.price);
     console.log(myPizza);
     return myPizza;
   });

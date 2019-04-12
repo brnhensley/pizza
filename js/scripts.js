@@ -1,8 +1,5 @@
 // Business Logic  ------------------------------------
 
-// Delete after testing
-var myPizza = new Pizza();
-//
 
 function Pizza(size, toppings, price) {
   this.size = size;
@@ -14,8 +11,17 @@ Pizza.prototype.sizeCalculator = function (inputSize) {
   this.size = inputSize;
 };
 
-Pizza.prototype.addToppings = function (inputTopping) {
-  this.toppings.push(inputTopping);
+Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputTopping3) {
+  if (inputTopping1 !== "") {
+    this.toppings.push(inputTopping1);
+  }
+  if (inputTopping2 !== "") {
+    this.toppings.push(inputTopping2);
+  }
+  if (inputTopping3 !== "") {
+    this.toppings.push(inputTopping3);
+  }
+  console.log(this.toppings);
 }
 
 Pizza.prototype.findPrice = function () {
@@ -44,15 +50,25 @@ $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
     var inputSize = $("select.new-pizza-size").val();
-    inputSize = sizeCalculator(inputSize)
-    console.log(inputSize);
-    var myPizza = new Pizza(inputSize)
+    var inputTopping1 = $("select.new-topping1").val();
+    var inputTopping2 = $("select.new-topping2").val();
+    var inputTopping3 = $("select.new-topping3").val();
+    var myPizza = new Pizza(inputSize, inputTopping1, inputTopping2, inputTopping3, 0)
+    myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
+    myPizza.findPrice();
+    console.log(myPizza);
+    return myPizza;
+
     // $("#toppings-form").show();
     // $("form#new-order").hide();
   });
 })
 
-$()
+// Delete after testing
+var myPizza = new Pizza();
+console.log(myPizza);
+//
+
 // var inputToppings = $("").val();
 
 // This function listens for clicks on toppings

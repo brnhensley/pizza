@@ -53,7 +53,7 @@ function showOrder(size, toppings, price) {
   $("#show-price").append(price);
   if (toppings.length > 0) {
     $("#show-toppings").show();
-    $("#show-toppings").append(String(toppings.join("")));
+    $("#show-toppings").append(String(toppings.join("").slice(0, -2)));
   }
 }
 

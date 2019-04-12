@@ -80,16 +80,3 @@ $(document).ready(function() {
     return myPizza;
   });
 })
-
-// DELETE THIS
-// $(document).ready(function() {
-  //   $("form#new-order").submit(function(event) {
-    //     event.preventDefault();
-    //     var inputSize = $("select.new-pizza-size").val();
-    //     inputSize = sizeCalculator(inputSize)
-    //     console.log(inputSize);
-    //     var myPizza = new Pizza(inputSize)
-    //     $("#toppings-form").show();
-    //     $("form#new-order").hide();
-    //   });
-    // })

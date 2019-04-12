@@ -10,19 +10,21 @@
 <body>
   <div class="container">
     <h1>Arrr Matey's order a fine Pie!</h1>
-    <form id="new-order">
 
+    <form id="new-order">
       <div class="form-group">
         <label for="new-pizza-size">What size 'za would you like?</label>
         <select class="new-pizza-size" id="new-pizza-size">
-          <option value="Home">Small</option>
-          <option value="Work">Medium</option>
-          <option value="Flophouse">Large</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
           <option value="Unreasonable">Unreasonably large!</option>
         </select>
       </div>
+      <button type="submit" name="btn-success">Choose your toppings!</button>
+    </form>
 
-      <div class="form-group">
+      <div id="toppings-form" class="form-group">
         <p>What toppings would you like?</p>
         <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni<br>
         <input type="checkbox" name="toppings" value="bacon"> Bacon<br>
@@ -35,8 +37,6 @@
         <input type="checkbox" name="toppings" value="hotdogs"> Hotdogs<br>
 
         </div>
-
-    </form>
 
   </div>
 </body>

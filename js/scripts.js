@@ -3,14 +3,12 @@
 // Delete after testing
 var myPizza = new Pizza();
 //
-    console.log(myPizza.toppings.length);
 
 function Pizza(size, toppings, price) {
   this.size = size;
   this.toppings = [];
   this.price = price;
 }
-
 
 Pizza.prototype.sizeCalculator = function (inputSize) {
   this.size = inputSize;
@@ -39,15 +37,22 @@ Pizza.prototype.findPrice = function () {
   return this.price;
 };
 
+
+
 // User Interface Logic -------------------------------
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
     var inputSize = $("select.new-pizza-size").val();
-    var inputTopping = $("").val();
-    var myPizza = new Pizza(inputSize, inputTopping)
+    inputSize = sizeCalculator(inputSize)
+    console.log(inputSize);
+    var myPizza = new Pizza(inputSize)
+    $("#toppings-form").show();
+    $("form#new-order").hide();
   });
 })
+
+// var inputToppings = $("").val();
 
 // This function listens for clicks on toppings
 // function attachToppingListeners() {

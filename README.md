@@ -1,22 +1,24 @@
-# _Beep Boop!_
+# _Pizza Shop_
 
-#### _Beep Boop, 4-5-19_
+#### _Pizza Shop, 4-12-19_
 
 #### By _**Brian Hensley**_
 
 ## Description
 
-_This is a webpage that will take an inputted user number and will print to screen a count from 0 to that number, with digits containing 1, 2, and 3 replaced.  It was created as a week end project for my third week in Epicodus bootcamp._
+_This is a webpage that will allow a user to design and order a pizza, using objects, constructors and prototypes.  It was created as a end week project for my fourth week at Epicodus bootcamp._
 
 ## Setup/Installation Requirements
 
-* _Clone from github at https://github.com/brnhensley/beep-boop-fp3_
+* _Clone from github at https://github.com/brnhensley/pizza_
 
 * _Open index.html in your browser_
 
-* _Insert a positive full number_
+* _Design your pizza's size and toppings_
 
-* _Recieve your Beeps and Boops!_
+* _Receive your price_
+
+* _Await delivery, be patient_
 
 ## Known Bugs
 
@@ -26,10 +28,10 @@ _No known bugs_
 
 |Spec|Input|Output|
 |-|-|-|
-|The program returns a range of numbers from 0 to the users inputted number|"5"|"0, 1, 2, 3, 4, 5,"|
-|Any output number containing a 3 will return "I'm sorry, Dave. I'm afraid I can't do that."|"3"|"0, 1, 2, I'm sorry, Dave. I'm afraid I can't do that."|
-|Any output number containing a 2 will return "Boop!"|"2"|"0, 1, Boop!"|
-|Any output number containing a 1 will return "Beep!"|"1"|"0, Beep!, 2"|
+|The program will create a pizza when the user selects a size|Small|Creates an pizza object with the size small|
+|The program will add a topping when the user selects one|Selects olives|Olives are added to pizza|
+|The program will calculate a price total based on the total size and toppings|Small, olive|$8|
+|The program will display to the user the design of their pizza along with a price|User clicks "Order"|"Your small olive pizza is $8"|
 
 ## Support and contact details
 

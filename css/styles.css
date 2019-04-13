@@ -3,6 +3,10 @@
   /* background-image: */
 }
 
+input {
+  width: 75%;
+}
+
 #show-toppings {
   display: none;
 }

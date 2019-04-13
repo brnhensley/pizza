@@ -35,3 +35,9 @@ form {
   margin: 20px;
   background-color: #A9D5ED
 }
+
+footer {
+  font-size: 12px;
+  text-align: center;
+  color: grey;
+}

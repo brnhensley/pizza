@@ -28,8 +28,6 @@ Pizza.prototype.findPrice = function () {
   } else if (this.size === "medium") {
     this.price = 10;
     this.price += (this.toppings.length * 2);
-    console.log(this.price);
-    console.log(this.toppings.length);
   } else if (this.size === "large"){
     this.price = 14;
     this.price += (this.toppings.length * 3);
@@ -42,7 +40,6 @@ Pizza.prototype.findPrice = function () {
 
 // Shows the final order to the user
 function showOrder(size, toppings, price) {
-  console.log(toppings.join(""));
   var toppingsString = toppings;
   $("form#new-order").hide();
   $("span#before-order").hide();
@@ -57,14 +54,13 @@ function showOrder(size, toppings, price) {
     toppings.forEach(function(element) {
       htmlListToppings += "<li>" + element + "</li>";
     });
-    console.log(htmlListToppings);
     orderToppingsList.html(htmlListToppings);
   }
 }
 
 // User Interface Logic -------------------------------
 
-var myPizza = new Pizza();
+// var myPizza = new Pizza();
 
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {

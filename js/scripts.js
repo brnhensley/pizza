@@ -60,8 +60,6 @@ function showOrder(size, toppings, price) {
 
 // User Interface Logic -------------------------------
 
-// var myPizza = new Pizza();
-
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
@@ -69,8 +67,8 @@ $(document).ready(function() {
     var inputTopping1 = $("select.new-topping1").val();
     var inputTopping2 = $("select.new-topping2").val();
     var inputTopping3 = $("select.new-topping3").val();
-    var myPizza = new Pizza(inputSize, inputTopping1, inputTopping2, inputTopping3, 0)
-    myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3)
+    var myPizza = new Pizza(inputSize, inputTopping1, inputTopping2, inputTopping3, 0);
+    myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3);
     myPizza.findPrice();
     showOrder(myPizza.size, myPizza.toppings, myPizza.price);
     return myPizza;

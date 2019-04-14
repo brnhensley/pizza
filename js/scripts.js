@@ -23,17 +23,13 @@ Pizza.prototype.addToppings = function (inputTopping1, inputTopping2, inputToppi
 // Price calculator
 Pizza.prototype.findPrice = function () {
   if (this.size === "small") {
-    this.price = 6;
-    this.price += this.toppings.length;
+    this.price = 6 + this.toppings.length;
   } else if (this.size === "medium") {
-    this.price = 10;
-    this.price += (this.toppings.length * 2);
+    this.price = 10 + (this.toppings.length * 2);
   } else if (this.size === "large"){
-    this.price = 14;
-    this.price += (this.toppings.length * 3);
+    this.price = 14 + (this.toppings.length * 3);
   } else {
-    this.price = 40;
-    this.price += (this.toppings.length * 5);
+    this.price = 40 + (this.toppings.length * 5);
   }
   return this.price;
 };

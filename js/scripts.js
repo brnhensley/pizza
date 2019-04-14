@@ -67,6 +67,5 @@ $(document).ready(function() {
     myPizza.addToppings(inputTopping1, inputTopping2, inputTopping3);
     myPizza.findPrice();
     showOrder(myPizza.size, myPizza.toppings, myPizza.price);
-    return myPizza;
   });
 })
